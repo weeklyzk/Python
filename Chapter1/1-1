@@ -1,1 +1,14 @@
-
+wordlist = ['cat', 'dog', 'rabbit']
+s1 = ''
+s2 = []
+b = len(wordlist)
+for a in range(b):
+    s1 = s1 + wordlist[a]
+for a1 in s1:
+    s2.append(a1)
+s2.reverse()
+for a2 in s2:
+    while s2.count(a2) > 1:
+        s2.remove(a2)
+s2.reverse()
+print(s2)
