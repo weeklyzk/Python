@@ -1,0 +1,3 @@
+wordlist = ['cat', 'dog', 'rabbit']
+s1 = [a for row in wordlist for a in row]
+print(s1)
