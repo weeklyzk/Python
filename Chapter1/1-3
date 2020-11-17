@@ -1,0 +1,22 @@
+import random
+wordlist = "methinks it is a weasel"
+def Random():
+    s1 = 'qwertyuiopasdfghjklzxcvbnm'
+    s1 = s1 + ' '
+    s2 = ''
+    for i in range(27):
+        s2 = s2 + random.choice(s1)
+    return s2
+def Match(s):
+    a = 0
+    s1=[a1 for a1 in s if a1 not in wordlist]
+    return len(s1)
+def Result():
+    temp = Random()
+    Sim = Match(temp)
+    print(Sim)
+    while Sim != 0:
+        temp = Random()
+        Sim = Match(temp)
+    print(temp)
+Result()
