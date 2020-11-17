@@ -1,0 +1,34 @@
+class Fraction:
+    def __init__(self, top, bottom):
+        self.num = top
+        self.den = bottom
+    def __str__(self):
+        print(self.num," / ",self.den)
+    def __add__(self, anoFra):
+        top = self.num * anoFra.den + self.den * anoFra.num
+        bottom = self.den * anoFra.den
+        n = gcd(top, bottom)
+        return Fraction(top//n, bottom//n)
+    def show(self):
+        print(self.num,' / ',self.den)
+    def __lt__(self, other):
+        a = float(self.num / self.den)
+        print(a)
+        b = float(other.num / other.den)
+        print(b)
+        if a - b < 0:
+            return True
+        else:
+            return False
+def gcd(m, n):
+    while n % m != 0:
+        oldn = n
+        n = m
+        m = oldn % m
+    return m
+myFra = Fraction(1, 4)
+myFra1 = Fraction(3, 4)
+ok = myFra + myFra1
+ok.show()
+ok1 = myFra < myFra1
+print(ok1)
