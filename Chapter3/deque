@@ -1,0 +1,29 @@
+class Deque:
+    def __init__(self):
+        self.deque = []
+    def addRear(self, item):
+        self.deque.insert(0, item)
+    def addFront(self,item):
+        self.deque.append(item)
+    def removeFront(self):
+        frontNum = self.deque[0]
+        self.deque.pop(0)
+        return frontNum
+
+    def removeRear(self):
+        rearNum = self.deque[-1]
+        self.deque.pop()
+        return rearNum
+    def isEmpty(self):
+        return self.deque == []
+    def size(self):
+        return len(self.deque)
+d = Deque()
+d.addRear(4)
+d.addRear('dog')
+d.addFront('cat')
+d.addFront(True)
+d.addRear(8.4)
+d.removeRear()
+d.removeFront()
+print(d.deque, d.isEmpty(), d.size())
